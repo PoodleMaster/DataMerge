@@ -11,9 +11,11 @@ data = {'Serial': ['AAA1', 'BBB1', 'CCC1'],
         '2023/12/03': [19, 29, 39]}
 
 df_result = pd.DataFrame.from_dict(data, orient='columns')
+print("-------------------------------------------------------------------------------")
 print(df_result)
 
 df_result = pd.DataFrame.from_dict(data, orient='index')
+print("-------------------------------------------------------------------------------")
 print(df_result)
 
 
@@ -27,6 +29,7 @@ data = {
 }
 
 df_result = pd.DataFrame.from_dict(data, orient='index')
+print("-------------------------------------------------------------------------------")
 print(df_result)
 
 
@@ -40,4 +43,11 @@ data = {
 }
 
 df_result = pd.DataFrame.from_dict(data, orient='index')
+print("-------------------------------------------------------------------------------")
 print(df_result)
+
+for index, row in df_result.iterrows():
+    print("-------------------------------------------------------------------------------")
+    print(f"Index : {index}")
+    for col_name, value in row.items():
+            print(f"    {col_name}: {value}")

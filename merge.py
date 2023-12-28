@@ -5,7 +5,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Merge CSV or TSV files with specified date format.')
-    parser.add_argument('--output-format', choices=['csv', 'tsv'], default='csv', help='Output file format (csv or tsv)')
+    parser.add_argument('--output-format', choices=['csv', 'tsv'], default='tsv', help='Output file format (csv or tsv)')
     return parser.parse_args()
 
 def main():
@@ -22,7 +22,7 @@ def main():
         raise ValueError("Invalid output format. Use 'csv' or 'tsv'.")
 
     # データが格納されているディレクトリ
-    input_dir_path = './csv_data/'  # この行を追加
+    input_dir_path = './csv_data/'
 
     # ファイル名から日付を抽出して、ソート
     file_list = sorted([f for f in os.listdir(input_dir_path) if f.endswith(".csv")], key=lambda x: x.split('_')[1].split('.')[0] if '_' in x else '')

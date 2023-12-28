@@ -5,7 +5,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Merge CSV or TSV files with specified date format.')
-    parser.add_argument('--output-format', choices=['csv', 'tsv'], default='csv', help='Output file format (csv or tsv)')
+    parser.add_argument('--output-format', choices=['csv', 'tsv'], default='tsv', help='Output file format (csv or tsv)')
     return parser.parse_args()
 
 def main():
